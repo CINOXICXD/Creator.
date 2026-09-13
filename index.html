@@ -57,6 +57,31 @@ footer{background:#1b1b1b;text-align:center;padding:30px;color:#aaa}
 function downloadMessage(){alert("Download link will be added soon!")}
 function subscribe(plan){alert("You selected the "+plan+" plan!")}
 function searchItems(){let s=document.getElementById("searchBox").value.toLowerCase();document.querySelectorAll(".item").forEach(i=>i.style.display=i.innerText.toLowerCase().includes(s)?"block":"none")}
+<div class="card">
+    <h3>My Game</h3>
+    <p>My game description</p>
+
+    <input
+        type="text"
+        id="gameLink"
+        placeholder="Yahan download link dalo"
+    >
+
+    <button onclick="downloadGame()">Download</button>
+</div>
+
+<script>
+function downloadGame() {
+    let link = document.getElementById("gameLink").value;
+
+    if (link === "") {
+        alert("Pehle download link add karo!");
+        return;
+    }
+
+    window.open(link, "_blank");
+}
+</script>
 </script>
 </body>
 </html>
